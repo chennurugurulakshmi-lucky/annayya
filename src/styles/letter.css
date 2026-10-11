@@ -1,0 +1,354 @@
+.letter-page {
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(188, 153, 255, 0.35),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(255, 166, 213, 0.25),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 50% 90%,
+      rgba(129, 173, 255, 0.22),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #171329 0%,
+      #251b3d 45%,
+      #19152f 100%
+    );
+
+  color: #fff8ff;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  padding: 80px 25px;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   FLOATING PURPLE LIGHT
+===================================================== */
+
+.letter-page::before {
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(213, 179, 255, 0.38),
+      rgba(213, 179, 255, 0.12) 40%,
+      transparent 72%
+    );
+
+  top: -120px;
+  left: -100px;
+
+  filter: blur(20px);
+
+  animation:
+    letterOrbOne 12s ease-in-out infinite alternate;
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   FLOATING PINK LIGHT
+===================================================== */
+
+.letter-page::after {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 177, 220, 0.28),
+      rgba(173, 145, 255, 0.12) 40%,
+      transparent 72%
+    );
+
+  right: -160px;
+  bottom: -150px;
+
+  filter: blur(25px);
+
+  animation:
+    letterOrbTwo 15s ease-in-out infinite alternate;
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.letter-inner {
+  width: min(800px, 100%);
+
+  text-align: center;
+
+  position: relative;
+
+  z-index: 5;
+
+  animation: letterAppear 1.2s ease forwards;
+}
+
+
+/* =====================================================
+   PAGE APPEAR
+===================================================== */
+
+@keyframes letterAppear {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.letter-intro {
+  font-family: Arial, sans-serif;
+
+  font-size: 10px;
+
+  letter-spacing: 5px;
+
+  color: #eadfff;
+
+  opacity: 0.65;
+
+  margin-bottom: 25px;
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.letter-inner h1 {
+  margin: 0;
+
+  font-size: clamp(40px, 8vw, 76px);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  color: #fff8ff;
+
+  text-shadow:
+    0 0 30px rgba(220, 191, 255, 0.18);
+}
+
+.letter-inner h1 span {
+  display: block;
+
+  font-style: italic;
+
+  color: #e5cfff;
+
+  opacity: 0.85;
+}
+
+
+/* =====================================================
+   DIVIDER
+===================================================== */
+
+.letter-line {
+  width: 55px;
+
+  height: 1px;
+
+  background: rgba(235, 211, 255, 0.5);
+
+  margin: 35px auto;
+}
+
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+.letter-message {
+  max-width: 680px;
+
+  margin: auto;
+}
+
+.letter-message p {
+  margin-bottom: 30px;
+
+  font-size: clamp(16px, 2vw, 19px);
+
+  line-height: 1.9;
+
+  color: rgba(255, 246, 255, 0.8);
+}
+
+
+/* =====================================================
+   MEMORIES BUTTON
+===================================================== */
+
+.memories-button {
+  margin-top: 20px;
+
+  padding: 12px 5px;
+
+  background: transparent;
+
+  color: #fff8ff;
+
+  border: none;
+
+  border-bottom: 1px solid rgba(230, 204, 255, 0.45);
+
+  cursor: pointer;
+
+  font-size: 11px;
+
+  letter-spacing: 3px;
+
+  transition:
+    letter-spacing 0.4s ease,
+    color 0.4s ease;
+}
+
+.memories-button span {
+  margin-left: 15px;
+
+  font-size: 18px;
+
+  color: #f3c9e9;
+}
+
+.memories-button:hover {
+  letter-spacing: 5px;
+
+  color: #e8cfff;
+}
+
+
+/* =====================================================
+   FLOATING ORB ANIMATIONS
+===================================================== */
+
+@keyframes letterOrbOne {
+
+  0% {
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+  }
+
+  35% {
+    transform:
+      translate3d(120px, 80px, 0)
+      scale(1.08);
+  }
+
+  65% {
+    transform:
+      translate3d(60px, 180px, 0)
+      scale(0.92);
+  }
+
+  100% {
+    transform:
+      translate3d(180px, 120px, 0)
+      scale(1.12);
+  }
+}
+
+@keyframes letterOrbTwo {
+
+  0% {
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+  }
+
+  35% {
+    transform:
+      translate3d(-100px, -90px, 0)
+      scale(1.1);
+  }
+
+  70% {
+    transform:
+      translate3d(-180px, -20px, 0)
+      scale(0.9);
+  }
+
+  100% {
+    transform:
+      translate3d(-80px, -150px, 0)
+      scale(1.12);
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .letter-page {
+    padding: 60px 20px;
+  }
+
+  .letter-page::before {
+    width: 300px;
+    height: 300px;
+  }
+
+  .letter-page::after {
+    width: 350px;
+    height: 350px;
+  }
+}

@@ -1,0 +1,840 @@
+.home-page {
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(190, 158, 255, 0.20),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(255, 174, 218, 0.15),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #171329,
+      #251b3d,
+      #19152f
+    );
+
+  color: #fff8ff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 60px 20px;
+
+  overflow: hidden;
+
+  position: relative;
+}
+
+
+/* =====================================================
+   FLOATING BACKGROUND
+===================================================== */
+
+.floating-background {
+  position: absolute;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+
+/* =====================================================
+   FLOATING ORBS
+===================================================== */
+
+.floating-orb {
+  position: absolute;
+
+  display: block;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 30% 30%,
+      rgba(255, 235, 255, 0.25),
+      rgba(205, 170, 255, 0.12) 40%,
+      rgba(255, 170, 220, 0.04) 65%,
+      transparent 75%
+    );
+
+  border: 1px solid rgba(235, 210, 255, 0.12);
+
+  backdrop-filter: blur(2px);
+
+  box-shadow:
+    0 0 35px rgba(202, 166, 255, 0.08);
+
+  opacity: 0.65;
+}
+
+
+/* BIG ORBS */
+
+.orb-1 {
+  width: 180px;
+  height: 180px;
+
+  left: -50px;
+  top: 10%;
+
+  animation: floatOne 16s ease-in-out infinite;
+}
+
+.orb-2 {
+  width: 110px;
+  height: 110px;
+
+  right: 8%;
+  top: 8%;
+
+  animation: floatTwo 13s ease-in-out infinite;
+}
+
+.orb-3 {
+  width: 220px;
+  height: 220px;
+
+  right: -90px;
+  top: 45%;
+
+  animation: floatThree 19s ease-in-out infinite;
+}
+
+.orb-4 {
+  width: 90px;
+  height: 90px;
+
+  left: 12%;
+  bottom: 5%;
+
+  animation: floatFour 12s ease-in-out infinite;
+}
+
+.orb-5 {
+  width: 140px;
+  height: 140px;
+
+  left: 45%;
+  top: -70px;
+
+  animation: floatFive 17s ease-in-out infinite;
+}
+
+.orb-6 {
+  width: 75px;
+  height: 75px;
+
+  right: 25%;
+  bottom: 10%;
+
+  animation: floatSix 14s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   SMALL FLOATING DOTS
+===================================================== */
+
+.floating-dot {
+  position: absolute;
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: rgba(242, 216, 255, 0.7);
+
+  box-shadow:
+    0 0 18px rgba(229, 190, 255, 0.8);
+
+  opacity: 0.7;
+}
+
+.dot-1 {
+  left: 18%;
+  top: 18%;
+
+  animation: dotFloatOne 9s ease-in-out infinite;
+}
+
+.dot-2 {
+  left: 75%;
+  top: 25%;
+
+  animation: dotFloatTwo 11s ease-in-out infinite;
+}
+
+.dot-3 {
+  left: 32%;
+  top: 70%;
+
+  animation: dotFloatThree 10s ease-in-out infinite;
+}
+
+.dot-4 {
+  right: 12%;
+  top: 65%;
+
+  animation: dotFloatFour 13s ease-in-out infinite;
+}
+
+.dot-5 {
+  left: 55%;
+  top: 12%;
+
+  animation: dotFloatFive 8s ease-in-out infinite;
+}
+
+.dot-6 {
+  left: 8%;
+  bottom: 25%;
+
+  animation: dotFloatSix 12s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.home-inner {
+  width: 100%;
+
+  max-width: 650px;
+
+  text-align: center;
+
+  position: relative;
+
+  z-index: 5;
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.intro-text {
+  font-family: Arial, sans-serif;
+
+  font-size: 10px;
+
+  letter-spacing: 5px;
+
+  color: #eadfff;
+
+  opacity: 0.65;
+
+  margin-bottom: 20px;
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.birthday-title {
+  margin: 0;
+
+  font-size: clamp(40px, 9vw, 78px);
+
+  font-weight: 400;
+
+  line-height: 0.9;
+
+  letter-spacing: -3px;
+
+  color: #fff8ff;
+
+  text-shadow:
+    0 0 30px rgba(220, 191, 255, 0.18);
+}
+
+.birthday-title span {
+  display: block;
+
+  margin-top: 12px;
+
+  font-size: 0.7em;
+
+  font-style: italic;
+
+  color: #e5cfff;
+
+  opacity: 0.85;
+}
+
+
+/* =====================================================
+   IMAGE
+===================================================== */
+/* =====================================================
+   IMAGE — SLOW BOTTOM TO TOP REVEAL
+===================================================== */
+
+.hero-image-wrapper {
+  width: min(320px, 75vw);
+
+  margin: 45px auto 35px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  /* Start with the entire image hidden */
+  clip-path: inset(100% 0 0 0);
+
+  animation: photoRevealUp 5s cubic-bezier(0.65, 0, 0.35, 1)
+    forwards;
+
+  animation-delay: 0.5s;
+}
+
+
+/* =====================================================
+   OUTER FRAME
+===================================================== */
+
+.hero-image-wrapper::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -12px;
+
+  border: 1px solid rgba(230, 207, 255, 0.45);
+
+  transform: rotate(-3deg);
+
+  box-shadow:
+    0 0 35px rgba(188, 153, 255, 0.2);
+
+  animation:
+    imageFloat 5s ease-in-out infinite;
+
+  pointer-events: none;
+
+  z-index: 3;
+}
+
+
+.hero-image-wrapper::after {
+  content: "";
+
+  position: absolute;
+
+  inset: -5px;
+
+  border: 1px solid rgba(255, 197, 225, 0.2);
+
+  transform: rotate(2deg);
+
+  pointer-events: none;
+
+  z-index: 3;
+}
+
+
+/* =====================================================
+   PHOTO
+===================================================== */
+
+.hero-image {
+  display: block;
+
+  width: 100%;
+
+  aspect-ratio: 4 / 5;
+
+  object-fit: cover;
+
+  position: relative;
+
+  border-radius: 2px;
+
+  filter: saturate(0.9);
+
+  box-shadow:
+    0 30px 80px rgba(8, 5, 20, 0.65);
+
+  transform: scale(1.04);
+
+  animation:
+    photoGentleZoom 7s ease-out forwards;
+
+  animation-delay: 0.5s;
+}
+
+
+/* =====================================================
+   BOTTOM → TOP REVEAL
+===================================================== */
+
+@keyframes photoRevealUp {
+
+  /* Completely hidden */
+  0% {
+    clip-path: inset(100% 0 0 0);
+  }
+
+  /* Tiny bottom portion */
+  10% {
+    clip-path: inset(90% 0 0 0);
+  }
+
+  /* Slowly reveal */
+  20% {
+    clip-path: inset(80% 0 0 0);
+  }
+
+  30% {
+    clip-path: inset(70% 0 0 0);
+  }
+
+  40% {
+    clip-path: inset(60% 0 0 0);
+  }
+
+  50% {
+    clip-path: inset(50% 0 0 0);
+  }
+
+  60% {
+    clip-path: inset(40% 0 0 0);
+  }
+
+  70% {
+    clip-path: inset(30% 0 0 0);
+  }
+
+  80% {
+    clip-path: inset(20% 0 0 0);
+  }
+
+  90% {
+    clip-path: inset(10% 0 0 0);
+  }
+
+  /* Fully visible */
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+
+/* =====================================================
+   VERY SLOW PHOTO MOVEMENT
+===================================================== */
+
+@keyframes photoGentleZoom {
+
+  0% {
+    transform: scale(1.04);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+/* =====================================================
+   FRAME FLOAT
+===================================================== */
+
+@keyframes imageFloat {
+
+  0%,
+  100% {
+    transform: rotate(-3deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(-1deg) translateY(-6px);
+  }
+}
+
+/* =====================================================
+   MESSAGE FRAME
+===================================================== */
+
+.message-frame {
+  width: 100%;
+
+  min-height: 250px;
+
+  padding: 30px 35px;
+
+  border: 1px solid rgba(231, 211, 255, 0.3);
+
+  border-radius: 4px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.08),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  text-align: center;
+
+  box-shadow:
+    0 20px 60px rgba(10, 6, 25, 0.35);
+
+  backdrop-filter: blur(12px);
+}
+
+.message-frame::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 8px;
+
+  border: 1px solid rgba(236, 217, 255, 0.08);
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   MESSAGES
+===================================================== */
+
+.completed-message {
+  margin: 0 0 18px;
+
+  font-size: clamp(16px, 2.5vw, 20px);
+
+  line-height: 1.6;
+
+  font-style: italic;
+
+  color: rgba(255, 246, 255, 0.82);
+
+  animation: sentenceAppear 0.6s ease forwards;
+}
+
+.typing-message {
+  margin: 0;
+
+  min-height: 32px;
+
+  font-size: clamp(16px, 2.5vw, 20px);
+
+  line-height: 1.6;
+
+  font-style: italic;
+
+  color: #fff8ff;
+}
+
+
+/* =====================================================
+   CURSOR
+===================================================== */
+
+.typing-cursor {
+  display: inline-block;
+
+  margin-left: 2px;
+
+  color: #e8cfff;
+
+  animation: cursorBlink 0.8s infinite;
+}
+
+@keyframes cursorBlink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+
+  46%,
+  100% {
+    opacity: 0;
+  }
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.view-message-button {
+  margin-top: 28px;
+
+  padding: 15px 28px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  border: 1px solid rgba(230, 204, 255, 0.45);
+
+  border-radius: 3px;
+
+  color: #fff8ff;
+
+  font-size: 11px;
+
+  letter-spacing: 3px;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(8px);
+
+  transition: 0.4s ease;
+}
+
+.view-message-button span {
+  margin-left: 10px;
+
+  font-size: 18px;
+
+  color: #f3c9e9;
+}
+
+.view-message-button:hover {
+  background: #f6eaff;
+
+  color: #302044;
+
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 12px 35px rgba(216, 176, 255, 0.22);
+}
+
+
+/* =====================================================
+   FLOATING ORB ANIMATIONS
+===================================================== */
+
+@keyframes floatOne {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate(100px, 130px) rotate(180deg);
+  }
+}
+
+@keyframes floatTwo {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-80px, 120px);
+  }
+}
+
+@keyframes floatThree {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(-130px, -100px) scale(1.15);
+  }
+}
+
+@keyframes floatFour {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(100px, -90px);
+  }
+}
+
+@keyframes floatFive {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-80px, 150px);
+  }
+}
+
+@keyframes floatSix {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-70px, -100px);
+  }
+}
+
+
+/* =====================================================
+   DOT ANIMATIONS
+===================================================== */
+
+@keyframes dotFloatOne {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(40px, -70px);
+  }
+}
+
+@keyframes dotFloatTwo {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-60px, 50px);
+  }
+}
+
+@keyframes dotFloatThree {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(70px, -40px);
+  }
+}
+
+@keyframes dotFloatFour {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-50px, -80px);
+  }
+}
+
+@keyframes dotFloatFive {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(60px, 80px);
+  }
+}
+
+@keyframes dotFloatSix {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(50px, -60px);
+  }
+}
+
+
+/* =====================================================
+   IMAGE ANIMATION
+===================================================== */
+
+@keyframes imageFloat {
+  0%,
+  100% {
+    transform: rotate(-3deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(-1deg) translateY(-6px);
+  }
+}
+
+
+/* =====================================================
+   SENTENCE
+===================================================== */
+
+@keyframes sentenceAppear {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .home-page {
+    padding: 45px 18px;
+  }
+
+  .birthday-title {
+    letter-spacing: -1px;
+  }
+
+  .hero-image-wrapper {
+    margin-top: 35px;
+  }
+
+  .message-frame {
+    min-height: 280px;
+
+    padding: 28px 20px;
+  }
+
+  .completed-message {
+    margin-bottom: 16px;
+  }
+
+  .view-message-button {
+    margin-top: 25px;
+  }
+
+  .floating-orb {
+    opacity: 0.45;
+  }
+}
